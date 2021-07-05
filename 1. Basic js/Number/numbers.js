@@ -1,53 +1,53 @@
 //even or odd check
-const isEven = (num) => {
-  return num % 2 == 0 ? true : false;
+const isEven = (number) => {
+  return number % 2 === 0 ? true : false;
 };
 //function return centuary from year
 function century(year) {
   return Math.ceil(year / 100);
 }
 //function check on greatest common divisor
-function divisor(num1, num2) {
-  let arr;
+function divisor(firstNumber, secondNumber) {
+  let arrayOfDigits = [];
 
-  for (i = 0; i <= num1; i++) {
-    if (num1 % i == 0 && num2 % i == 0) {
-      arr = i;
+  for (i = 0; i <= firstNumber; i++) {
+    if (firstNumber % i === 0 && secondNumber % i === 0) {
+      arrayOfDigits = i;
     }
   }
-  return arr;
+  return arrayOfDigits;
 }
 //function return factorial
-function factorial(num) {
-  let count = 1;
-  while (num != 0) {
-    count *= num;
-    num--;
+function factorial(digit) {
+  let result = 1;
+  while (digit !== 0) {
+    result *= digit;
+    digit--;
   }
-  return count;
+  return result;
 }
 //function return the duplicated number
-const sortArr = (arr) => {
-  let newArr = arr.sort();
+const sortArr = (arrayOfNumbers) => {
+  let sortedArray = arrayOfNumbers.sort();
   let result = [];
-  for (i = 0; i < arr.length; i++) {
-    if (newArr[i + 1] == arr[i]) result.push(arr[i]);
+  for (i = 0; i < arrayOfNumbers.length; i++) {
+    if (sortedArray[i + 1] == arrayOfNumbers[i]) result.push(arrayOfNumbers[i]);
   }
   return result;
 };
 //prime check
-const isPrime = (num) => {
-  let arr = [];
+const isPrime = (digit) => {
+  let wrapper = [];
 
-  if (num == 1) {
+  if (digit === 1) {
     return true;
   } else {
-    for (i = 1; i <= num; i++) {
-      if (num % i == 0) {
-        arr.push(i);
+    for (i = 1; i <= digit; i++) {
+      if (digit % i === 0) {
+        wrapper.push(i);
       }
     }
   }
 
-  return arr.length == 2 ? true : false;
+  return wrapper.length === 2 ? true : false;
 };

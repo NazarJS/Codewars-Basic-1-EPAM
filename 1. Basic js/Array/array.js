@@ -1,49 +1,56 @@
 // function return new filtered array
-const filterArray = (arr) => {
-  let newArr = [];
-  return arr.filter((item) => {
-    return newArr.hasOwnProperty(item) ? false : (newArr[item] = true);
+const filterArray = (arrOfnumbers) => {
+  let sortedArray = [];
+  return arrOfnumbers.filter((item) => {
+    return sortedArray.hasOwnProperty(item) ? false : (sortedArray[item] = true);
   });
 };
 //function return som of all positives numbers
-const countPositiveNum = (arr) => {
+const countPositiveNum = (arrOfnumbers) => {
   let count = 0;
 
-  arr.forEach((item) => {
+  arrOfnumbers.forEach((item) => {
     item > 0 ? (count += item) : false;
   });
   return count;
 };
 //Fizz Buzz
-const fizzbuzz = (num) => {
-  let arr = [];
-  let newArr = [];
+const fizzbuzz = (numberOfDigits) => {
+  let arrayOfNumbers = [];
+  let sortedArray = [];
 
-  for (i = 1; i <= num; i++) {
-    arr.push(i);
+  for (i = 1; i <= numberOfDigits; i++) {
+    arrayOfNumbers.push(i);
   }
-  arr.forEach((item) => {
-    if (item % 3 == 0 && item % 5 == 0) {
-      newArr.push("fizzbuzz");
-    } else if (item % 3 == 0) {
-      newArr.push("fizz");
-    } else if (item % 5 == 0) {
-      newArr.push("buzz");
-    } else if (item % 3 !== 0) {
-      newArr.push(item);
+
+  arrayOfNumbers.forEach((item) => {
+    switch (true) {
+      case item % 3 === 0 && item % 5 === 0:
+        sortedArray.push('fizzbuzz');
+        break;
+      case item % 3 === 0:
+        sortedArray.push('fizz');
+        break;
+      case item % 5 === 0:
+        sortedArray.push('buzz');
+        break;
+      case item % 3 !== 0:
+        sortedArray.push(item);
+        break;
     }
   });
+   
   return newArr;
 };
 //function return array multiplied by number
-const multiplyAll = (arr) => (num) => {
-  return arr.map((item) => {
-    return item * num;
+const multiplyAll = (arrOfnumbers) => (multiplyDigit) => {
+  return arrOfnumbers.map((item) => {
+    return item * multiplyDigit;
   });
 };
 //function searches for the shortest word
-const shortestWord = (str) => {
-  let stringArray = str.split(" ");
+const shortestWord = (sentenceLine) => {
+  let stringArray = sentenceLine.split(' ');
   let shortWord;
   let shortestLength = stringArray[0].length;
   for (let i = 0; i < stringArray.length; i++) {
@@ -55,19 +62,19 @@ const shortestWord = (str) => {
   return shortWord;
 };
 //function squre every digit
-const squreEveryDigit = (num) => {
-  let digit = num
+const squreEveryDigit = (numberOfDigits) => {
+  let digit = numberOfDigits
     .toString()
-    .split("")
+    .split('')
     .map((item) => {
       return item * item;
     })
-    .join("");
+    .join('');
   return (digit = Number(digit));
 };
 //function takes an array and a function
-function processArray(arr, fun) {
-  return arr.map((element) => {
+function processArray(arrOfElements, fun) {
+  return arrOfElements.map((element) => {
     return fun(element);
   });
 }

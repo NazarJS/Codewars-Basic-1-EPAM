@@ -1,11 +1,11 @@
 //function adds items to the object
-function countAllCherectas(str) {
-  let newObject = {};
-  let newStr = str.split("").sort();
-  newStr.forEach((element) => {
-    newObject.hasOwnProperty(element)
-      ? newObject[element]++
-      : (newObject[element] = 1);
+function countAllCherectas(textLine) {
+  let resultObject = {};
+  let sortedTextLine = textLine.split('').sort();
+  sortedTextLine.forEach((element) => {
+    resultObject.hasOwnProperty(element)
+      ? resultObject[element]++
+      : (resultObject[element] = 1);
   });
-  return newObject;
+  return resultObject;
 }
