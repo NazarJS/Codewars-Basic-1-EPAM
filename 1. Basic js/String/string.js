@@ -1,31 +1,30 @@
 // function return reverse string
-function reverse(str) {
-  return str.split("").reverse().join("");
+function reverse(textLine) {
+  return textLine.split('').reverse().join('');
 }
 //function remove first and last letter
-function removeChar(str) {
-  let nam = str.substring(1, str.length - 1);
+function removeChar(textLine) {
+  let shortedTextLine = textLine.substring(1, textLine.length - 1);
 
-  return nam.split("").reverse().join("");
+  return shortedTextLine;
 }
 //palindrome check
-const palindrome = (str) => {
-  let num = String(str);
-  return num == num.split("").reverse().join("");
+const palindrome = (element) => {
+  let stringElement = String(element);
+  return stringElement === stringElement.split('').reverse().join('');
 };
 //anagram check
-const anagram = (num1, num2) => {
-  num1 = num1.split("").sort().join("");
-  num2 = num2.split("").sort().join("");
-  return num1 == num2 ? true : false;
+const anagram = (firstTextLine, secondTextLine) => {
+  firstTextLine = firstTextLine.split('').sort().join('');
+  secondTextLine = secondTextLine.split('').sort().join('');
+  return firstTextLine === secondTextLine ? true : false;
 };
 //function count all letters
-const countAllLetters = (str) => {
-  let count = null;
+const countAllLetters = (textLine) => {
+  let result = null;
 
-  for (i = 0; i < str.length; i++) {
-    count += str[i].charCodeAt();
-    console.log(str[i]);
+  for (i = 0; i < textLine.length; i++) {
+    result += textLine[i].charCodeAt();
   }
-  return count;
+  return result;
 };
